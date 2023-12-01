@@ -1,5 +1,9 @@
 import './App.css';
 import Forma_Calendario from './componente/componente1.jsx';
+import Nav_bar from './componente/nav_bar.jsx';
+import Info from './componente/info.jsx';
+import Regalo from './componente/regalo.jsx';
+import Tabla from './componente/tabla.jsx';
 import {useState,useEffect}from "react"
 import axios from "axios"
 function App() {
@@ -18,15 +22,10 @@ function App() {
 console.log(regalos);
   return (
     <div >
-      <center>
-        <h1>CALENDARIO DE ADVIENTO</h1>
-     
-      {regalos.map((regalo) => (
-        
-          <Forma_Calendario nombre={regalo.nombre} descripcion={regalo.descripcion} imagen={regalo.imagen} visible={regalo.visible}></Forma_Calendario>
-        ))}
-        
-        </center>
+      <Nav_bar></Nav_bar>
+      <Info></Info>
+      <Tabla miArray={regalos} />
+      <h1>Gracias por estar ahi siempre</h1>
     </div>
   );
 }
